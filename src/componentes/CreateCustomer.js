@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Table, TableBody, TableCell, TableRow } from '@material-ui/core';
+import { Table, TableBody, TableCell, TableRow } from '@material-ui/core';
 
 function CreateCustomer() {
     return (

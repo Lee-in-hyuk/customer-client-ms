@@ -48,6 +48,6 @@ function useAsync (callback, deps=[]){
     useEffect(()=>{
         fetchData();
     },deps)
-    return [ state, fetchData ];
+    return state;
 }
 export default useAsync;
