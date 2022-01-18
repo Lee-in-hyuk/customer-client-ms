@@ -2,6 +2,7 @@ import './App.css';
 import Header from './componentes/Header';
 import Footer from './componentes/Footer';
 import CustomerList from './componentes/CustomerList';
+import CreateCustomer from './componentes/CreateCustomer';
 
 function App() {
   const title = "그린고객관리";
@@ -37,6 +38,7 @@ function App() {
       <Header title={title}/>
       <div className='contents'>
         <CustomerList sampleData={sampleData}/>
+        <CreateCustomer />
       </div>
       <Footer title={title}/>
     </div>
