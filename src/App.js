@@ -35,7 +35,9 @@ function App() {
   return (
     <div className="App">
       <Header title={title}/>
-      <CustomerList sampleData={sampleData}/>
+      <div className='contents'>
+        <CustomerList sampleData={sampleData}/>
+      </div>
       <Footer title={title}/>
     </div>
   );
