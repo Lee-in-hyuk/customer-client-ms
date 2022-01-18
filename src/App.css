@@ -9,6 +9,7 @@ body {
   margin: 0 auto;
 }
 li { list-style: none; }
+a { text-decoration: none; color: inherit; }
 .header {
   display: flex;
   justify-content: space-between;
@@ -25,7 +26,7 @@ li { list-style: none; }
   cursor: pointer;
 }
 .header ul li:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 .contents {
   padding: 40px 0;
@@ -41,4 +42,24 @@ li { list-style: none; }
 .footer h2 {
   font-weight: normal;
   font-size: 22px;
+}
+.contents table.createTable td {
+  text-align: left;
+}
+.contents table.createTable td:nth-child(1){
+  width: 30%;
+}
+table.createTable input[type='text']{
+  width: 80%;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+button {
+  background-color: coral;
+  color: #fff;
+  margin-right: 8px;
+  border: none;
+  outline: none;
+  padding: 10px 24px;
+  border-radius: 6px;
 }
