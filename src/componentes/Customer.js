@@ -4,12 +4,12 @@ import { TableRow, TableCell } from '@material-ui/core';
 function Customer({data}) {
     return (
         <TableRow>
-            <TableCell>{data.no}</TableCell>
-            <TableCell>{data.name}</TableCell>
-            <TableCell>{data.phone}</TableCell>
-            <TableCell>{data.birthday}</TableCell>
-            <TableCell>{data.gender}</TableCell>
-            <TableCell>{data.addr}</TableCell>
+            <TableCell>{data.c_no}</TableCell>
+            <TableCell>{data.c_name}</TableCell>
+            <TableCell>{data.c_phone}</TableCell>
+            <TableCell>{data.c_birthday}</TableCell>
+            <TableCell>{data.c_gender}</TableCell>
+            <TableCell>{data.c_addr}</TableCell>
         </TableRow>
     );
 }

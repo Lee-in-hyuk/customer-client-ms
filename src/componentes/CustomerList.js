@@ -41,8 +41,8 @@ function CustomerList() {
                 <TableBody>
                     {/* customers는 객체로 되어있는데, 그 안의 인덱스(data)에
                     필요로 하는 값들이 있어서 customers.data로 사용 */}
-                    {customers.data.map(data=>(
-                        <Customer data={data} key={data.no}/>
+                    {customers.map(data=>(
+                        <Customer data={data} key={data.c_no}/>
                     ))}
                 </TableBody>
             </Table>
