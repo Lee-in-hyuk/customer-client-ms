@@ -1,11 +1,13 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableRow } from '@material-ui/core';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+// import useAsync from '../hooks/useAsync';
 
-function CreateCustomer() {
-    const navigate = useNavigate();
+function EditCustomer() {
+    const param = useParams();
+    const { id } = param;
     const [ formData, setFormData ] = useState({
         c_name:"",
         c_phone:"",
@@ -13,23 +15,29 @@ function CreateCustomer() {
         c_gender:"",
         c_addr:""
     });
+    // async function getCustomer(){
+    //     const response = await axios.get(
+    //         `http://localhost:8080/edit/${id}`
+    //     )
+    //     return response.data;
+    // }
+    // const state = useAsync(getCustomer);
+    // const { loading, error, data:customer } = state;
+    // if(loading) return <div>로딩중.......</div>
+    // if(error) return <div>페이지를 나타낼 수 없습니다.</div>
+    // if(!customer) return null;
+
     const onChange = (e) => {
-        // e.target은 각 인풋에 들어오는 값을 지정하는거고, 그걸 name과 value로 구조분해할당해서 적용
         const { name, value } = e.target;
         setFormData({
             ...formData,
             [name]:value
         })
-        // console.log(name,value);
     }
     // 폼 submit이벤트
     const onSubmit = (e) => {
-        // submit의 기본 이벤트가 실행되면 주소창에 get요청으로 전송되므로,
-        // 기본 이벤트를 없애주는 함수
         e.preventDefault();
-        // submit 버튼 누를 때 insertCustomer가 실행되어야 하니까 onSubmit 함수 안에 작성
-        insertCustomer();
-        // submit버튼 누르고 나면 setFormData가 비워지게 세팅
+        editCustomer();
         setFormData({
             c_name:"",
             c_phone:"",
@@ -38,19 +46,19 @@ function CreateCustomer() {
             c_addr:""
         })
     }
-    // post전송 axios
-    function insertCustomer(){
-        axios.post("http://localhost:8080/addCustomer",formData)
+    // put전송 axios
+    function editCustomer(){
+        axios.put(`http://localhost:8080/edit/${id}`,formData)
         .then(function(res){
             console.log(res);
-            navigate(-1);
         }).catch(function(err){
             console.log(err);
         })
     }
+
     return (
         <div>
-            <h2>신규 고객 등록하기</h2>
+            <h2>고객 정보 수정하기</h2>
             <form onSubmit={onSubmit}>
                 <Table className='createTable'>
                     <TableBody>
@@ -90,4 +98,4 @@ function CreateCustomer() {
     );
 }
 
-export default CreateCustomer;
+export default EditCustomer;

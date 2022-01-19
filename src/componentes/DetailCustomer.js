@@ -1,12 +1,13 @@
 import React from 'react';
 import { Table, TableBody, TableRow, TableCell } from '@material-ui/core';
 // id를 사용하기 위해 작성
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 // 데이터 조회하기 위해 가져옴
 import useAsync from '../hooks/useAsync';
 
 function DetailCustomer() {
+    const navigate = useNavigate();
     const param = useParams();
     const { id } = param;
     // console.log(param);
@@ -30,6 +31,7 @@ function DetailCustomer() {
         axios.delete(`http://localhost:8080/customer/${id}`)
         .then((result)=>{
             console.log('삭제되었습니다.');
+            navigate(-1);
         }).catch((err)=>{
             console.log(err);
         })
@@ -61,6 +63,7 @@ function DetailCustomer() {
                     </TableRow>
                 </TableBody>
             </Table>
+            <button onClick={(e)=>(e.preventDefault())}><Link to='/edit'>수정하기</Link></button>
             <button onClick={onDelete}>삭제</button>
             <button onClick={(e)=>(e.preventDefault())}><Link to='/'>리스트보기</Link></button>
         </div>
