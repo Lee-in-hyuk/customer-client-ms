@@ -3,6 +3,7 @@ import Header from './componentes/Header';
 import Footer from './componentes/Footer';
 import CustomerList from './componentes/CustomerList';
 import CreateCustomer from './componentes/CreateCustomer';
+import DetailCustomer from './componentes/DetailCustomer';
 // 라우터 적용
 import { Routes, Route } from 'react-router-dom';
 
@@ -15,7 +16,8 @@ function App() {
       <div className='contents'>
         <Routes>
           <Route path='/' element={<CustomerList/>}/>
-          <Route path='/create' element={<CreateCustomer />}/>          
+          <Route path='/create' element={<CreateCustomer />}/>  
+          <Route path='/customer/:id' element={<DetailCustomer />}/>
         </Routes>
       </div>
       <Footer title={title}/>

@@ -18,7 +18,7 @@ function CreateCustomer() {
             ...formData,
             [name]:value
         })
-        console.log(name,value);
+        // console.log(name,value);
     }
     // 폼 submit이벤트
     const onSubmit = (e) => {

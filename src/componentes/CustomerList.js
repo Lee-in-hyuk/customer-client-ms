@@ -14,7 +14,7 @@ async function getCustomers(){
 function CustomerList() {
     const state = useAsync(getCustomers);
     const { loading, error, data:customers } = state;
-    console.log(customers);
+    // console.log(customers);
     
     // 로딩중이라면 ?
     if(loading) return <div>로딩중....</div>
