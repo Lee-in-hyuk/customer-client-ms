@@ -63,7 +63,7 @@ function DetailCustomer() {
                     </TableRow>
                 </TableBody>
             </Table>
-            <button onClick={(e)=>(e.preventDefault())}><Link to='/edit'>수정하기</Link></button>
+            <button><Link to={`/edit/${customer[0].c_no}`}>수정하기</Link></button>
             <button onClick={onDelete}>삭제</button>
             <button onClick={(e)=>(e.preventDefault())}><Link to='/'>리스트보기</Link></button>
         </div>
