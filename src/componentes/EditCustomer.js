@@ -18,7 +18,7 @@ function EditCustomer() {
     });
     async function getCustomer(){
         const response = await axios.get(
-            `http://localhost:8080/edit/${id}`
+            `https://customer-server-ms.herokuapp.com/edit/${id}`
         )
         return response.data;
     }
@@ -49,7 +49,7 @@ function EditCustomer() {
     }
     // put전송 axios
     function editCustomer(){
-        axios.put(`http://localhost:8080/edit/${id}`,formData)
+        axios.put(`https://customer-server-ms.herokuapp.com/edit/${id}`,formData)
         .then(function(res){
             navigate(-1);
             console.log(res);
@@ -79,8 +79,8 @@ function EditCustomer() {
                         <TableRow>
                             <TableCell>성별</TableCell>
                             <TableCell>
-                                남성<input name='c_gender' type="radio" value="남성"/>
-                                여성<input name='c_gender' type="radio" value="여성"/>
+                                남성<input name='c_gender' type="radio" value="남성" onChange={onChange}/>
+                                여성<input name='c_gender' type="radio" value="여성" onChange={onChange}/>
                             </TableCell>
                         </TableRow>
                         <TableRow>

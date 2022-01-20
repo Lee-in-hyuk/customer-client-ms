@@ -8,7 +8,7 @@ import useAsync from '../hooks/useAsync';
 // getCustomers - 비동기 전송으로 get요청을 해주는 함수
 // 응답받은 데이터를 리턴해줌
 async function getCustomers(){
-    const response = await axios.get('http://localhost:8080/customers')
+    const response = await axios.get('https://customer-server-ms.herokuapp.com/customers')
     return response.data;
 }
 function CustomerList() {

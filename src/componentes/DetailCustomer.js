@@ -13,7 +13,7 @@ function DetailCustomer() {
     // console.log(param);
     async function getCustomer(){
         const response = await axios.get(
-            `http://localhost:8080/customer/${id}`
+            `https://customer-server-ms.herokuapp.com/customer/${id}`
         )
         return response.data;
     }
@@ -28,7 +28,7 @@ function DetailCustomer() {
 
     // 삭제하기
     const onDelete = () => {
-        axios.delete(`http://localhost:8080/customer/${id}`)
+        axios.delete(`https://customer-server-ms.herokuapp.com/customer/${id}`)
         .then((result)=>{
             console.log('삭제되었습니다.');
             navigate(-1);

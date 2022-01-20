@@ -40,7 +40,7 @@ function CreateCustomer() {
     }
     // post전송 axios
     function insertCustomer(){
-        axios.post("http://localhost:8080/addCustomer",formData)
+        axios.post("https://customer-server-ms.herokuapp.com/addCustomer",formData)
         .then(function(res){
             console.log(res);
             navigate(-1);
